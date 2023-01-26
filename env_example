@@ -1,0 +1,4 @@
+env_name="local"
+db_name="postgres://<username>:<password>@<host>:<port>/<db_name>"
+host="127.0.0.1"
+port=8000
