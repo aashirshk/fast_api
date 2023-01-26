@@ -1,0 +1,12 @@
+version: "3"
+services:
+    fastapi:
+        build:
+            context: .
+            dockerfile: ./dockerfile
+            args:
+              - PYTHON_VERSION=3.9
+        ports:
+            - "8001:8001"
+        image: fast_api:latest
+        container_name: "fast_api"
