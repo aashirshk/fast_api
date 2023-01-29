@@ -2,6 +2,7 @@ from pydantic import BaseSettings, ValidationError as PydanticValidationError
 from loggers.logger import Logger
 from functools import lru_cache
 from utils.decorators import return_check
+from typing import List
 
 log = Logger()
 
@@ -15,6 +16,7 @@ class Env(BaseSettings):
     host: str = "127.0.0.1"
     port: int = 8000
     db_name: str
+    allowed_hosts: List[str]
 
     class Config:
         env_file = "../.env"

@@ -1,4 +1,12 @@
 from fastapi.routing import APIRouter
+from fastapi.responses import Response
+from fastapi_restful.cbv import cbv
+
+router = APIRouter(prefix="/urlshort")
 
 
-router = APIRouter(prefix="/short-url")
+@cbv(router)
+class UrlShortner:
+    @router.get("/tt")
+    def get_root(self):
+        return Response("Ok")
